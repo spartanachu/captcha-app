@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captcha Check</title>
+</head>
+<style>
+    div{
+        height:500px;
+        width:500px;
+        background-color: lightblue;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    #getvalue{
+        margin-top: 20px;
+        height: 40px;
+        width:300px;
+        border-radius: 5vw;
+        font-size:30px;
+    }
+    #btn{
+        border:none;
+        padding: 10px;
+        width:60px;
+        border-radius: 10px;
+    }
+    #btn:hover{
+        background-color: black;
+        color:white;
+    }
+    #display{
+        border: solid black 2px;
+        width:50%;
+        height:50%;
+        margin-left: 100px;
+        margin-top: 100px;
+        background-color: lightyellow;
+    }
+</style>
+<body>
+    <div>
+        <input id="getvalue" type="text">
+
+        <button id="btn">Check</button>
+    
+        <h1 id="display">Display</h1>
+    
+        <h1 id="result">Result</h1>
+    </div>
+   
+
+    <script>
+        var getvalue=document.getElementById("getvalue")
+        var result=document.getElementById("result")
+        var btn=document.getElementById("btn")
+        var dis=document.getElementById("display")
+
+        var random=(Math.random()+5).toString(36).substring(7).toUpperCase()
+            dis.textContent=random
+            console.log(dis.textContent)
+        function show()
+        {
+
+        }
+
+        btn.addEventListener("click",()=>{
+   
+
+            if(dis.textContent==getvalue.value)
+            {
+                result.textContent=alert("Captcha Verifyed Successfuly")
+            }
+            else{
+                result.textContent=alert("wrong")
+            }
+
+        })
+    </script>
+</body>
+</html>
